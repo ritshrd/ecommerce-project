@@ -1,20 +1,26 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { Home, Login, Signup, Dashboard } from '../pages'
 import SingleProduct from '../components/SingleProduct/SingleProduct'
+import { useAdminContext } from '../Hooks/useAdmin'
 
 const RoutesIndex = () => {
-  return (
-    /*<BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/:id' Component={SingleProduct} />
+  const { isAdmin } = useAdminContext()
 
-      </Routes>
-    </BrowserRouter>*/
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/signup' element={<Signup />} />
+      <Route
+        path='/Dashboard' element={
+        isAdmin
+          ? <Dashboard />
+          : <Navigate to='/' />
+        }
+      />
+      <Route path='/:id' Component={SingleProduct} />
+
+    </Routes>
   )
 }
 
