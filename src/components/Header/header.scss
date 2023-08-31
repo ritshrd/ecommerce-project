@@ -1,0 +1,44 @@
+
+header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+  }
+  .nav-links li {
+    margin-right: 20px;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
+  /* Estilos del campo de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px ;
+    font-size: 14px;
+    height: 17px;
+  }
+  
+  .search-bar button {
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    color: #fff;
+    cursor: pointer;
+  }
