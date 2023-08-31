@@ -16,10 +16,13 @@ header {
     margin-right: 20px;
   }
 
-  .nav-links a {
-    color: #fff;
+  .header__item-link{
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
+  .header__item-link--is-active{
+      color:rgb(117, 117, 117)
+    }
   /* Estilos del campo de búsqueda */
 .search-bar {
     display: flex;
