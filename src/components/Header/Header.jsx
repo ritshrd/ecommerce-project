@@ -6,7 +6,7 @@ import './header.scss'
 import { useAdminContext } from '../../Hooks/useAdmin'
 
 const Header = () => {
-  const { logout } = useAdminContext()
+  const { isAdmin, logout } = useAdminContext()
   const { products, setSelectedProduct, setSearch } = useProductContext()
 
   const linkIsActive = (isActive) => {
@@ -20,24 +20,36 @@ const Header = () => {
   return (
     <>
       <header>
-        <div>Logo</div>
+        <div>&#9751; SupaStore</div>
         <nav>
           <ul className='nav-links'>
             <li className='header__list-item'>
               <NavLink to='/' className={({ isActive }) => linkIsActive(isActive)}>Home</NavLink>
             </li>
+            {
+          !isAdmin &&
             <li className='header__list-item'>
               <NavLink to='/signup' className={({ isActive }) => linkIsActive(isActive)}>Signup</NavLink>
             </li>
+}
+            {
+          !isAdmin &&
             <li className='header__list-item'>
               <NavLink to='/login' className={({ isActive }) => linkIsActive(isActive)}>Login</NavLink>
             </li>
+}
+            {
+          isAdmin &&
             <li className='header__list-item'>
               <NavLink to='/dashboard' className={({ isActive }) => linkIsActive(isActive)}>Dashboard</NavLink>
             </li>
+              }
+            {
+          isAdmin &&
             <li className='header__list-item'>
-              <NavLink to='/' onClick={logout}>Log Out</NavLink>
+              <NavLink to='/' onClick={logout} className='header__item-link'>Log Out</NavLink>
             </li>
+}
           </ul>
         </nav>
         <div className='search-bar'>

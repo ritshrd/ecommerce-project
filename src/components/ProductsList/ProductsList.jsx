@@ -19,12 +19,11 @@ const ProductsList = () => {
             key={item.id}
             onClick={() => { setSelectedProduct(item); console.log('click') }}
           >
-            <h3 className='productList__title'>{item.product_name}</h3><br />
-            <span><img src={item.image} alt='' /></span><br />
-            <span>{item.category}</span><br />
-            <span className='productList__description'>{item.description}</span><br />
-            <span>{item.price}</span><br />
-            <Link to={`/${item.id}`}>Más</Link>
+
+            <div><span><img src={item.image} alt='' /></span><br /></div>
+            <div><span className='product_category'>{item.category}</span><h3 className='productList__title'>{item.product_name}</h3></div>
+            <div className='productList__price'><span>Price ${item.price}</span><br /></div>
+            <div className='producList__moreInfo'><Link to={`/${item.id}`}>More info</Link></div>
           </div>
 
         ))}

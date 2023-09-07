@@ -1,0 +1,30 @@
+.singleProductContainer{
+    display: flex;
+    justify-content: center;
+}
+.singleProduct{
+    display: flex;
+   
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    flex-direction: row;
+}
+.singleProduct__image{
+  width: 100%;
+}
+.singleProduct__description{
+    margin: 20px;
+}
+.singleProduct__back{
+    padding: 25px;
+    background: #dfdfdf;
+}
+.singleProduct__back a{
+    text-decoration: none;
+    color: black;
+}
+.singleProductContainer__all{
+    width: 60%;
+}
+

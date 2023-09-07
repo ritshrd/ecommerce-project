@@ -17,7 +17,7 @@ const Signup = () => {
     <main className='form-signin w-100 m-auto'>
       <form onSubmit={handleSubmit(sendData)}>
 
-        <h1 className='h3 mb-3 fw-normal'>Please sign up</h1>
+        <h1 className='h3 mb-3 fw-normal'>Sign up</h1>
 
         <div className='form-floating'>
           <input
